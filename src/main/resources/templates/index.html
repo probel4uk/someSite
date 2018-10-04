@@ -42,15 +42,26 @@
 
             <div class="right">
 
-                <div th:switch="${#authentication}? ${#authorization.expression('isAuthenticated()')} : ${false}">
-                    <span th:case="${false}">User is not logged in</span>
-                    <span th:case="${true}">Logged in user</span>
+                <!--<div th:text="'Hello, ' + ${username} + '!' + 'role: ' + ${role}"></div>-->
+
+                <div th:switch="${username !=null}">
+                    <span th:case="${false}">
+                        User is not logged in
+                        <form th:action="@{/login}" method="get">
+                              <input type="submit" value="Войти"/>
+                          </form>
+                          <form th:action="@{/registration}" method="get">
+                              <input type="submit" value="Зарегистрироваться"/>
+                          </form>
+                    </span>
+                    <span th:case="${true}">
+                        <div th:text="${username}"/>
+                          <form th:action="@{/logout}" method="post">
+                              <input type="submit" value="Sign Out"/>
+                          </form>
+                    </span>
                     <span th:case="*">Should never happen, but who knows...</span>
                 </div>
-
-                <form th:action="@{/logout}" method="post">
-                    <input type="submit" value="Sign Out"/>
-                </form>
 
 
             </div>
