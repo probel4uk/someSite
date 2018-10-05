@@ -13,6 +13,7 @@
           .carousel-inner > .item > a > img {
               width: 70%;
               margin: auto;
+              height:800px;
           }
 
     </style>
@@ -99,14 +100,14 @@
             <div class="carousel-inner" role="listbox">
 
                 <div class="item active">
-                    <img src="/images/product_foto/7.jpg" alt="Chania" width="460" height="345">
+                    <img src="images/prodact_foto/7.jpg" alt="Chania" width="250" height="250">
                     <div class="carousel-caption">
                         <h3>Chania</h3>
                         <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
                     </div>
                 </div>
                 <div class="item" th:each="product : ${products}">
-                    <img th:src="${product.imgUrl}" alt="Chania" width="460" height="345">
+                    <img th:src="${product.imgUrl}" alt="Chania" width="250" height="250">
                     <div class="carousel-caption">
                         <h3>Chania</h3>
                         <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
