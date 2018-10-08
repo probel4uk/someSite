@@ -22,7 +22,7 @@ body
 #hat
 {
     width:100%;
-    height:130px;
+
      background:#f1f1f1;
 }
 #footer
@@ -39,6 +39,11 @@ body
  {
      float:right;
  }
+ #hat_bottom
+  {
+      clear:both;
+      padding:10px;
+  }
 
 #clock
 {

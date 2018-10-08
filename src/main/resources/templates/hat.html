@@ -3,6 +3,8 @@
 
 <div id="hat" th:fragment="hat">
     <div id="hat_top">
+
+
         <div class="left">
             <img id="img_1" src="images/logo.png" width="130px" height="130px" alt="Logo "/>
         </div>
@@ -32,11 +34,26 @@
                 <span th:case="*">Should never happen, but who knows...</span>
             </div>
 
-
         </div>
+
 
     </div>
     <div id="hat_bottom">
+
+        <div id="sb-search" class="sb-search">
+
+            <form>
+
+                <input class="sb-search-input" placeholder="Enter your search term..." type="search" value=""
+                       name="search" id="search">
+
+                <input class="sb-search-submit" type="submit" value="Найти">
+
+
+            </form>
+
+        </div>
+
 
     </div>
 
