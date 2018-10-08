@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div id="hat" th:fragment="hat">
+    <div id="hat_top">
+        <div class="left">
+            <img id="img_1" src="images/logo.png" width="130px" height="130px" alt="Logo "/>
+        </div>
+        <div class="left">
+            <p id="clock"> dsghsdgh!!!!!</p>
+
+        </div>
+
+        <div class="right">
+
+            <div th:switch="${user !=null}">
+                    <span th:case="${false}">
+                        User is not logged in
+                        <form th:action="@{/login}" method="get">
+                              <input type="submit" value="Войти"/>
+                          </form>
+                          <form th:action="@{/registration}" method="get">
+                              <input type="submit" value="Зарегистрироваться"/>
+                          </form>
+                    </span>
+                <span th:case="${true}">
+                        <div th:text="${user.username}"/>
+                          <form th:action="@{/logout}" method="post">
+                              <input type="submit" value="Sign Out"/>
+                          </form>
+                    </span>
+                <span th:case="*">Should never happen, but who knows...</span>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div id="hat_bottom">
+
+    </div>
+
+</div>
+</body>
+</html>

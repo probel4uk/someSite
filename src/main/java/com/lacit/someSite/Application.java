@@ -11,13 +11,17 @@ public class Application {
         SpringApplication.run(Application.class, args);
 
 
-//
+
 //        File file = new File("db/products.txt");
 //        String path= file.getAbsolutePath();
 //        path=path.replaceAll("\\\\","/");
 
         //"D:/SpringProjects/someSite/src/main/resources/db/products.txt"
+
+        /**
+         * Неполучилось подгружать файл по заполнению базы данных ресурсу*/
         AutomateImport.createProducts("D:/SpringProjects/someSite/src/main/resources/db/products.txt");
+//        AutomateImport.createProducts(path);
     }
 
 
