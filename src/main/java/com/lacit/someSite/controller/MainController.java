@@ -46,8 +46,13 @@ public class MainController {
 
 
         }
-        List<Product> products = productService.getProductForCarousel(4);
-        model.addAttribute("products", products);
+        try {
+            List<Product> products = productService.getProductForCarousel(4);
+            model.addAttribute("products", products);
+        } catch (Exception e) {
+
+        }
+
 
 
         return "index";

@@ -47,7 +47,7 @@ class DBase {
                     ResultSet.CONCUR_UPDATABLE);
 
             query = "LOAD DATA LOCAL INFILE '" + filename +
-                    "' INTO TABLE products FIELDS TERMINATED BY '; ' LINES TERMINATED BY '\\r\\n'(product_id, name, price, img_url, characteristic);";
+                    "' INTO TABLE products FIELDS TERMINATED BY '; ' LINES TERMINATED BY '\\n'(product_id, name, price, img_url, characteristic);";
 
             stmt.executeUpdate(query);
 
