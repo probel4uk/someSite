@@ -2,7 +2,7 @@ body
 {
 	background-color: #151424;
 	background-image: url('../images/bg000000.jpg');
-	background-repeat: repeat-y;
+	background-repeat: no-repeat;
 	color: #646464;
 	font-family: Tahoma;
 	font-size: 15px;
@@ -16,34 +16,19 @@ body
 	background-color: #ffffff;
 	margin: 0 auto;
 	padding: 0;
-	width: 1200px;
-
+	width: 900px;
+	height:700px;
 }
 #hat
 {
     width:100%;
-
+    height:130px;
      background:#f1f1f1;
 }
-#footer
-{
-
-    height:130px;
-    background:#f1f1f1;
-}
 .left
- {
-     float:left;
- }
- .right
- {
-     float:right;
- }
- #hat_bottom
-  {
-      clear:both;
-      padding:10px;
-  }
+{
+    float:left;
+}
 
 #clock
 {
@@ -53,47 +38,3 @@ body
     font-size: 25px;
     text-align:center;
 }
-.price{
-
-    background-color: #ffffff;
-    color: #000000;
-    font-size: 40px;
-}
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  width: 70%;
-  margin: auto;
-  height:800px;
-}
-#head_banner{
-    height:400px;
-    width:900px
-    margin: auto;
-}
-.carousel-inner2 > .item > img,
-.carousel-inner2 > .item > a > img {
-  width: 90%;
-  margin: auto;
-  height:300px;
-}
-
-#two_simple_banner{
-  width: 600px;
-  margin: auto;
-  height:400px;
-}
- table {
-    width: 100%; /* Ширина таблицы */
-    border: 4px double black; /* Рамка вокруг таблицы */
-    border-collapse: collapse; /* Отображать только одинарные линии */
-   }
-   th {
-    text-align: left; /* Выравнивание по левому краю */
-    background: #ccc; /* Цвет фона ячеек */
-    padding: 5px; /* Поля вокруг содержимого ячеек */
-    border: 1px solid black; /* Граница вокруг ячеек */
-   }
-   td {
-    padding: 5px; /* Поля вокруг содержимого ячеек */
-    border: 1px solid black; /* Граница вокруг ячеек */
-   }
