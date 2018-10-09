@@ -1,25 +1,28 @@
 package com.lacit.someSite;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.lacit.someSite.dbLoader.AutomateImport;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
 public class Application {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
+
+
+
+//        File file = new File("db/products.txt");
+//        String path= file.getAbsolutePath();
+//        path=path.replaceAll("\\\\","/");
+
+        //"D:/SpringProjects/someSite/src/main/resources/db/products.txt"
+
+        /**
+         * Неполучилось подгружать файл по заполнению базы данных ресурсу*/
+        AutomateImport.createProducts("D:/SpringProjects/someSite/src/main/resources/db/products.txt");
+//        AutomateImport.createProducts(path);
     }
 
-//    @Autowired
-//    private BCryptPasswordEncoder bCryptPasswordEncoder;
-//
-//
-//    @Autowired
-//    public void  configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication().withUser("u").password(bCryptPasswordEncoder.encode("1")).roles("USER");
-//    }
 
 }

@@ -9,29 +9,20 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
-
 @Controller
-public class MainController {
+public class DetailsController {
     @Autowired
     UserService userService;
 
     @Autowired
     ProductService productService;
 
-    @GetMapping("/greeting")
-    public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        model.addAttribute("name", name);
-        return "greeting";
-    }
 
-
-    @RequestMapping("/")
-    public String getIndexx(Model model) {
+    @RequestMapping("/details")
+    public String getProduct(@RequestParam(name = "id", required = false, defaultValue = "0") int id, Model model) {
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
@@ -46,15 +37,12 @@ public class MainController {
 
 
         }
-        List<Product> products = productService.getProductForCarousel(4);
-        model.addAttribute("products", products);
+        Product product = productService.findProductById(id);
+        model.addAttribute("product", product);
 
 
-        return "index";
+        return "details";
     }
-
-
-
 
 
 }

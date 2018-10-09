@@ -1,17 +1,15 @@
 package com.lacit.someSite.domain;
 
-import lombok.Data;
 
-import javax.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
 
-@Data
-@Entity
-@Table(name = "role")
-public class Role {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "role_id")
-    private int id;
-    @Column(name = "role")
-    private String role;
+
+public enum Role implements GrantedAuthority {
+    USER;
+
+
+    @Override
+    public String getAuthority() {
+        return name();
+    }
 }
