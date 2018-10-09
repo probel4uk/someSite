@@ -30,4 +30,17 @@ public class ProductService {
         }
         return products;
     }
+
+    public List<Product> getProducts(String name) {
+        name = name.trim();
+        if (name.equals("")) {
+            return productRepository.findAll();
+        } else
+            return productRepository.findByName(name);
+
+    }
+
+
+
+
 }

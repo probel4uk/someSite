@@ -1,25 +1,53 @@
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Registration Form</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-<form th:action="@{/login}" method="get">
-    <button class="btn btn-md btn-warning btn-block" type="Submit">Go To Login Page</button>
-</form>
+    <title>Getting Started: Serving Web Content</title>
+    <link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-<div class="container">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        function startTime()
+        {
+        var tm=new Date();
+        var h=tm.getHours();
+        var m=tm.getMinutes();
+        var s=tm.getSeconds();
+        m=checkTime(m);
+        s=checkTime(s);
+        document.getElementById('clock').innerHTML=h+":"+m+":"+s;
+        t=setTimeout('startTime()',500);
+        }
+        function checkTime(i)
+        {
+        if (i<10)
+        {
+        i="0" + i;
+        }
+        return i;
+        }
+
+    </script>
+</head>
+<body onload="startTime()">
+<div class="maindiv" id="main_div">
+
+
+    <div th:insert="hat :: hat"></div>
+    <form th:action="@{/login}" method="get">
+        <button class="btn btn-md btn-warning btn-block" type="Submit">На старницу логина</button>
+    </form>
+
+    <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <form autocomplete="off" action="#" th:action="@{/registration}"
                   th:object="${user}" method="post" class="form-horizontal"
                   role="form">
-                <h2>Registration Form</h2>
+                <h2>Форма регистарации</h2>
                 <div class="form-group">
                     <div class="col-sm-9">
                         <label th:if="${#fields.hasErrors('username')}" th:errors="*{username}"
@@ -66,7 +94,13 @@
             </form>
         </div>
     </div>
+    </div>
+
+    <div th:insert="footer :: footer"></div>
+
+
 </div>
+
 
 </body>
 </html>

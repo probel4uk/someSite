@@ -9,7 +9,7 @@
             <img id="img_1" src="images/logo.png" width="130px" height="130px" alt="Logo "/>
         </div>
         <div class="left">
-            <p id="clock"> dsghsdgh!!!!!</p>
+            <p id="clock"></p>
 
         </div>
 
@@ -19,16 +19,17 @@
                     <span th:case="${false}">
                         User is not logged in
                         <form th:action="@{/login}" method="get">
-                              <input type="submit" value="Войти"/>
+                              <input class="btn btn-lg btn-primary btn-block" type="submit" value="Войти"/>
                           </form>
+                        <br>
                           <form th:action="@{/registration}" method="get">
-                              <input type="submit" value="Зарегистрироваться"/>
+                              <input class="btn btn-lg btn-primary btn-block" type="submit" value="Зарегистрироваться"/>
                           </form>
                     </span>
                 <span th:case="${true}">
                         <div th:text="${user.username}"/>
                           <form th:action="@{/logout}" method="post">
-                              <input type="submit" value="Sign Out"/>
+                              <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign Out"/>
                           </form>
                     </span>
                 <span th:case="*">Should never happen, but who knows...</span>
@@ -42,10 +43,10 @@
 
         <div id="sb-search" class="sb-search">
 
-            <form>
+            <form th:action="@{/product}" method="get">
 
                 <input class="sb-search-input" placeholder="Enter your search term..." type="search" value=""
-                       name="search" id="search">
+                       name="product_name" id="search">
 
                 <input class="sb-search-submit" type="submit" value="Найти">
 

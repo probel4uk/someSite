@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Getting Started: Serving Web Content</title>
-    <link href="css/mystyle.css" rel="stylesheet" type="text/css" />
+    <link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -35,33 +35,28 @@
 <body onload="startTime()">
 <div class="maindiv" id="main_div">
     <div th:insert="hat :: hat"></div>
-<form th:action="@{/registration}" method="get">
-    <button class="btn btn-md btn-warning btn-block" type="Submit">На стараницу регистрации</button>
-</form>
 
-<div class="container">
 
-    <form th:action="@{/login}" method="POST" class="form-signin">
-        <h3 class="form-signin-heading" th:text="Welcome"></h3>
-        <br/>
+    <div class="container">
 
-        <input type="text" id="email" name="email"  th:placeholder="Email"
-               class="form-control" /> <br/>
-        <input type="password"  th:placeholder="Password"
-               id="password" name="password" class="form-control" /> <br />
+        <div>
 
-        <div align="center" th:if="${param.error}">
-            <p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+            <div class="left">
+                <img th:src="${product.imgUrl}" th:alt="${product.name}" width="250" height="250">
+            </div>
+            <div th:text="${product.name}"></div>
+            <div th:text="${product.price} + '$'"></div>
+            <div th:text="${product.characteristic}"></div>
+
+
         </div>
-        <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit" th:text="Login"></button>
-    </form>
-</div>
+
+
+    </div>
 
     <div th:insert="footer :: footer"></div>
 
 
 </div>
-
-
 </body>
 </html>
